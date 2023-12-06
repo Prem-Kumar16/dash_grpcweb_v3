@@ -51,7 +51,7 @@ var registerRequest = {
     namespace: 'sdv.cansignals',
     name: 'speed_and_rpm',
     version: '1.0.0.0',
-    uri: 'http://localhost:8080',
+    uri: ':8080', //For getting hostname dynamically, provided only the port and resolved the hostname in client.js file
     communication_kind: 'grpc+proto',
     communication_reference: 'can.communication_reference.v1.proto',
   },
