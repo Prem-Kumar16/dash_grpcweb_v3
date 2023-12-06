@@ -34,7 +34,8 @@ service_client.discover(disRequest, {}, (error, response) => {
       console.log('Service URI:', service_uri);
 
       //Use the retrieved service uri to 
-      var client = new CANSignalServiceClient(service_uri, null, null);
+      //var client = new CANSignalServiceClient(service_uri, null, null);
+      var client = new CANSignalServiceClient('http://' + window.location.hostname + service_uri, null, null);
 
       // server streaming call
 
