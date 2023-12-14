@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+package datasim;
+
+service CANSignalService {
+  rpc StreamCANSignals (Empty) returns (stream CANSignal);
+}
+
+message Empty {}
+
+message CANSignal {
+  int32 id = 1;
+  bytes data = 2;
+}
