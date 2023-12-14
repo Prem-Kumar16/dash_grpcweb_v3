@@ -53,7 +53,8 @@ service_client.discover(disRequest, {}, (error, sd_response) => {
             console.log('client connected')
         })
 
-        var grpc_client = new services.CANSignalServiceClient('localhost:50100', grpc.credentials.createInsecure());
+        //Use the uri discovered from service registry to create grpc client and to get CAN Signals
+        var grpc_client = new services.CANSignalServiceClient(service_uri, grpc.credentials.createInsecure());
         console.log("grpc client created and server starts to send messages")
         try {
             var request = new messages.Empty();
