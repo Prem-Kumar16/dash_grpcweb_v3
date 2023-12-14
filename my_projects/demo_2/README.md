@@ -1,4 +1,4 @@
-*Final steps*
+**Final steps**
 
 Run this command : sudo npm install -g grpc-tools
 
