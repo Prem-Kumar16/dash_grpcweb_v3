@@ -26,13 +26,6 @@ RUN cd chariott/service_discovery &&\
 WORKDIR /app
 COPY package.json /app
 COPY . .
-RUN rm Dockerfile
-RUN protoc -I=. autodemo.proto \
-    --js_out=import_style=commonjs:. \
-    --grpc-web_out=import_style=commonjs,mode=grpcwebtext:.
-RUN protoc -I=. service_registry.proto \
-    --js_out=import_style=commonjs:. \
-    --grpc-web_out=import_style=commonjs,mode=grpcwebtext:.
 RUN npm install
-RUN npx webpack client.js
+RUN npx webpack ./client.js
 RUN node server.js &
