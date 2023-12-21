@@ -40,8 +40,9 @@ COPY package.json /app
 COPY . .
 RUN npm install
 RUN npx webpack ./client.js
+RUN chmod +x /app/start_sr.sh
 RUN chmod +x /app/start_server.sh
-CMD /app/start_server.sh
+CMD ./start_server.sh
 #CMD ["/bin/sh"]
 EXPOSE 8080
 EXPOSE 9090
