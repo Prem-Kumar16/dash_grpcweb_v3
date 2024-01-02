@@ -1,4 +1,4 @@
-FROM ubuntu:latest
+FROM premrajreddy/envoy_for_chariott:v1
 RUN apt-get update
 #NodeJS installation
 RUN apt-get install -y ca-certificates curl gnupg
@@ -8,14 +8,7 @@ RUN curl -fsSL https://deb.nodesource.com/gpgkey/nodesource-repo.gpg.key | gpg -
 RUN echo "deb [signed-by=/etc/apt/keyrings/nodesource.gpg] https://deb.nodesource.com/node_21.x nodistro main" | tee /etc/apt/sources.list.d/nodesource.list
 RUN apt-get update
 RUN apt-get install nodejs -y
-#Envoy install
-RUN apt update
-RUN apt install apt-transport-https gnupg2 curl lsb-release
-RUN curl -sL 'https://deb.dl.getenvoy.io/public/gpg.8115BA8E629CC074.key' | gpg --dearmor -o /usr/share/keyrings/getenvoy-keyring.gpg
-RUN echo a077cb587a1b622e03aa4bf2f3689de14658a9497a9af2c427bba5f4cc3c4723 /usr/share/keyrings/getenvoy-keyring.gpg | sha256sum --check
-RUN echo "deb [arch=amd64 signed-by=/usr/share/keyrings/getenvoy-keyring.gpg] https://deb.dl.getenvoy.io/public/deb/ubuntu $(lsb_release -cs) main" | tee /etc/apt/sources.list.d/getenvoy.list
-RUN apt update
-RUN apt install -y getenvoy-envoy
+
 #Chariott build
 RUN apt-get install can-utils nano
 RUN apt install -y gcc
@@ -44,6 +37,7 @@ RUN chmod +x /app/start_sr.sh
 RUN chmod +x /app/start_server.sh
 CMD ./start_server.sh
 #CMD ["/bin/sh"]
+#CMD ["bash"]
 EXPOSE 8080
 EXPOSE 9090
 EXPOSE 50000
