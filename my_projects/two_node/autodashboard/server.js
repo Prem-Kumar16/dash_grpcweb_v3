@@ -15,7 +15,7 @@ const {DiscoverRequest, DiscoverResponse} = require('./service_registry_pb.js');
 const {ServiceRegistryClient} = require('./service_registry_grpc_pb.js');
 
 //The URL is where the chariott's service registry is running
-var service_client = new ServiceRegistryClient('13.201.23.199:50000', grpc.credentials.createInsecure());
+var service_client = new ServiceRegistryClient('13.126.233.234:50000', grpc.credentials.createInsecure());
 
 // Declare variables for service to be discovered
 
