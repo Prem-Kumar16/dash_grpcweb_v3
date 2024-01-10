@@ -40,7 +40,7 @@ var service_registry = protoDescriptor2.service_registry;
 //New additions for registering the service start
 //var client = new service_registry.ServiceRegistry('0.0.0.0:50000', grpc.credentials.createInsecure());
 //The URL is where the chariott's service registry is running
-var client = new service_registry.ServiceRegistry('13.201.23.199:50000', grpc.credentials.createInsecure());
+var client = new service_registry.ServiceRegistry('13.126.233.234:50000', grpc.credentials.createInsecure());
 
 
 var registerRequest = {
@@ -49,7 +49,7 @@ var registerRequest = {
     name: 'digital_dash',
     version: '1.0.0.0',
     //uri: 'localhost:50100',
-    uri: '52.66.104.179:50100', 
+    uri: '3.7.144.155:50100', 
     communication_kind: 'grpc+proto',
     communication_reference: 'can.communication_reference.v1.proto',
   },
