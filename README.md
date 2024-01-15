@@ -96,7 +96,7 @@ Can also verify the stream of messages passing by opening the browser developer 
 
 ## THIS DEMO WILL WORK BEST ON MUMBAI (ap-south-1) region
 
-Deploy EC2 in Mumbai region
+### 1. Run Chariott Service Discovery
 
 Please open the below link in new tab to ease the process
 
@@ -123,3 +123,70 @@ docker logs <container id>
 
 ![Screenshot (422)](https://github.com/Prem-Kumar16/dash_grpcweb_v3/assets/75419846/4fcfe226-d254-4a41-be36-6d30c9d72a75)
 
+
+### 2. Spin Datasimulator resources
+
+Please open the below link in new tab to ease the process
+
+[![Launch](https://samdengler.github.io/cloudformation-launch-stack-button-svg/images/ap-south-1.svg)](https://ap-south-1.console.aws.amazon.com/cloudformation/home?region=ap-south-1#/stacks/quickcreate?templateURL=https%3A%2F%2Fs3.ap-south-1.amazonaws.com%2Fcf-templates-fui01m96flo3-ap-south-1%2F2024-01-15T094018.882Zc64-demo-2-datasim-cfn.yml&stackName=Datasimulator-demo2)
+
+The ```Datasimulator-demo2``` CloudFormation stack will take about **2 minutes** to be created. This cloudformation stack creates an ec2 instance named "Datasimulator-demo2" to deploy the demo, a security group, a key pair.
+
+Connect to the instance like how you connected for the service discovery using EC2 instance connect.
+
+Run the below command to know the status of the docker container
+
+```sh
+docker ps
+```
+
+Copy the Container ID and run the below command to see the logs of the container. The log should state that the service is registered successfully, something similar to the below image
+
+```sh
+docker logs <container id>
+```
+
+![Screenshot (424)](https://github.com/Prem-Kumar16/dash_grpcweb_v3/assets/75419846/8e4bb335-c393-475b-b9f1-80ee0567466f)
+
+
+If the service is registered successfully, open the url -> http://3.7.144.155:3000/, you should see the CAN input simulator running.
+
+![Screenshot (426)](https://github.com/Prem-Kumar16/dash_grpcweb_v3/assets/75419846/7b883eda-121b-496a-8aff-88e12564cad1)
+
+
+### 3. Spin Dashboard resources
+
+Please open the below link in new tab to ease the process
+
+[![Launch](https://samdengler.github.io/cloudformation-launch-stack-button-svg/images/ap-south-1.svg)](https://ap-south-1.console.aws.amazon.com/cloudformation/home?region=ap-south-1#/stacks/quickcreate?templateURL=https%3A%2F%2Fs3.ap-south-1.amazonaws.com%2Fcf-templates-fui01m96flo3-ap-south-1%2F2024-01-15T101502.351Z960-demo-2-dashboard-cfn.yml&stackName=Dashboard-demo2)
+
+The ```Dashboard-demo2``` CloudFormation stack will take about **2 minutes** to be created. This cloudformation stack creates an ec2 instance named "Dashboard-demo2" to deploy the demo, a security group, a key pair.
+
+Connect to the instance like how you connected for the service discovery using EC2 instance connect.
+
+Run the below command to know the status of the docker container
+
+```sh
+docker ps
+```
+
+Copy the Container ID and run the below command to see the logs of the container. The log should state that the service is discovered successfully, something similar to the below image
+
+```sh
+docker logs <container id>
+```
+
+![Screenshot (427)](https://github.com/Prem-Kumar16/dash_grpcweb_v3/assets/75419846/1eeefeac-fe6e-4161-be33-0a00b27e7c33)
+
+If the service is registered successfully, open the url -> http://13.127.34.56:4000/, you should see the Dashboard simulator running.
+
+![Screenshot (429)](https://github.com/Prem-Kumar16/dash_grpcweb_v3/assets/75419846/cf6a215b-030a-4cc8-8e0a-b5954b874b50)
+
+Also, go to the EC2 instance connect of service discovery. If you check the logs of the service discovery, it contains every info of service registered and discovered there.
+
+![Screenshot (430)](https://github.com/Prem-Kumar16/dash_grpcweb_v3/assets/75419846/adddacb9-a311-4769-9fbc-512ec9395e19)
+
+
+Now you can change any values in can bus input simulator and see the changes in the digital cockpit.
+
+![Screenshot (431)](https://github.com/Prem-Kumar16/dash_grpcweb_v3/assets/75419846/d907acab-c7d7-4bbf-afe8-367aa56052f5)
