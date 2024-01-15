@@ -190,3 +190,17 @@ Also, go to the EC2 instance connect of service discovery. If you check the logs
 Now you can change any values in can bus input simulator and see the changes in the digital cockpit.
 
 ![Screenshot (431)](https://github.com/Prem-Kumar16/dash_grpcweb_v3/assets/75419846/d907acab-c7d7-4bbf-afe8-367aa56052f5)
+
+# Cleanup
+
+## Demo 1 
+
+Delete CloudFormation stack **Chariott-CAN-demo1**
+
+## Demo 2
+
+Delete the below cloudformation stacks one by one
+
+1. Service-discovery-demo2
+2. Datasimulator-demo2
+3. Dashboard-demo2
