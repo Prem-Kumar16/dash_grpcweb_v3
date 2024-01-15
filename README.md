@@ -90,3 +90,36 @@ You should see something similar to the below gif
 Can also verify the stream of messages passing by opening the browser developer tools (for chrome browser, use ctrl + shift + i or right-click and choose "inspect"). It should look something similar to the below image
 
 ![Screenshot (420)](https://github.com/Prem-Kumar16/dash_grpcweb_v3/assets/75419846/4ab11442-6711-4558-81f9-4b6d225bc301)
+
+
+# Demo 2
+
+## THIS DEMO WILL WORK BEST ON MUMBAI (ap-south-1) region
+
+Deploy EC2 in Mumbai region
+
+Please open the below link in new tab to ease the process
+
+[![Launch](https://samdengler.github.io/cloudformation-launch-stack-button-svg/images/ap-south-1.svg)](https://ap-south-1.console.aws.amazon.com/cloudformation/home?region=ap-south-1#/stacks/quickcreate?templateURL=https%3A%2F%2Fs3.ap-south-1.amazonaws.com%2Fcf-templates-fui01m96flo3-ap-south-1%2F2024-01-15T082243.326Zjni-demo-2-chariott-cfn.yml&stackName=Service-discovery-demo2)
+
+The ```Service-discovery-demo2``` CloudFormation stack will take about **2 minutes** to be created. This cloudformation stack creates an ec2 instance named "Service-discovery-demo2" to deploy the demo, a security group, a key pair. The instance spun uses custom AMI based on Ubuntu 22.04 LTS (Jammy Jellyfish) that is preinstalled with all the dependencies needed for the demo to run.
+
+Now go to the EC2 instance page, choose the instance named **Service-discovery-demo2**. Choose "Connect" option and select "EC2-Instance connect" option. Change the username to "ubuntu" and select "connect". The instance will be connected via SSH. 
+
+![Screenshot (423)](https://github.com/Prem-Kumar16/dash_grpcweb_v3/assets/75419846/70fa1355-0a43-4dbd-8333-4b9c91f5f588)
+
+
+Run the below command to know the status of the docker container
+
+```sh
+docker ps
+```
+
+Copy the Container ID and run the below command to see the logs of the container. The log should state that the Service registry is running at port 50000, something similar to the below image
+
+```sh
+docker logs <container id>
+```
+
+![Screenshot (422)](https://github.com/Prem-Kumar16/dash_grpcweb_v3/assets/75419846/4fcfe226-d254-4a41-be36-6d30c9d72a75)
+
