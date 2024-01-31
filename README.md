@@ -119,6 +119,10 @@ Copy the Container ID and run the below command to see the logs of the container
 
 ```sh
 docker logs <container id>
+
+or simply use the below one line command
+
+docker logs `docker ps|cut -d " " -f1 |tail -1`
 ```
 
 ![Screenshot (422)](https://github.com/Prem-Kumar16/dash_grpcweb_v3/assets/75419846/4fcfe226-d254-4a41-be36-6d30c9d72a75)
@@ -144,6 +148,10 @@ Copy the Container ID and run the below command to see the logs of the container
 
 ```sh
 docker logs <container id>
+
+or simply use the below one line command
+
+docker logs `docker ps|cut -d " " -f1 |tail -1`
 ```
 
 ![Screenshot (424)](https://github.com/Prem-Kumar16/dash_grpcweb_v3/assets/75419846/8e4bb335-c393-475b-b9f1-80ee0567466f)
@@ -174,6 +182,10 @@ Copy the Container ID and run the below command to see the logs of the container
 
 ```sh
 docker logs <container id>
+
+or simply use the below one line command
+
+docker logs `docker ps|cut -d " " -f1 |tail -1`
 ```
 
 ![Screenshot (427)](https://github.com/Prem-Kumar16/dash_grpcweb_v3/assets/75419846/1eeefeac-fe6e-4161-be33-0a00b27e7c33)
