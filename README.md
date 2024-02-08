@@ -87,7 +87,7 @@ You should see something similar to the below gif
 ![giphy](https://github.com/Prem-Kumar16/dash_grpcweb_v3/assets/75419846/8c09eb31-4c46-4a1d-adcf-27c971ab6ebe)
 
 
-Can also verify the stream of messages passing by opening the browser developer tools (for chrome browser, use ctrl + shift + i or right-click and choose "inspect"). It should look something similar to the below image
+Can also verify the stream of messages passing by opening the browser developer tools (for chrome browser, use ctrl + shift + i or right-click and choose "inspect"). After opening the developer console, make sure to switch to "Console" tab as given in the image to see the logs. It should look something similar to the below image
 
 ![Screenshot (420)](https://github.com/Prem-Kumar16/dash_grpcweb_v3/assets/75419846/4ab11442-6711-4558-81f9-4b6d225bc301)
 
