@@ -1,6 +1,6 @@
 # CAN-Chariott Demos
 
-The repository contains the instructions and code that allows you to create a dashboard demo using virtual can interface that leverages Chariott's service discovery
+The repository contains the instructions and code that allows you to create a dashboard demo using virtual **CAN** interface that leverages Chariott's service discovery
 
 ## What is Chariott?
 
@@ -49,7 +49,9 @@ Go to actions -> download file and paste this path "/home/cloudshell-user/keypai
 <img width="450" alt="Screenshot 2024-01-11 124035" src="https://github.com/Prem-Kumar16/dash_grpcweb_v3/assets/75419846/97d1d419-b526-47cc-9ef5-be5349f4a53f">
 
 
-If you go to ec2 instances page, you will find a newly created instance named "Chariott-demo1". SSH into the instance using the key file  that you have previously downloaded
+If you go to ec2 instances page, you will find a newly created instance named "Chariott-demo1". SSH into the instance using the key file  that you have previously downloaded.
+
+Note : The Username to use for ssh is "ubuntu".
 
 After you SSH into the instance, you can see that the demo's docker image is running in the instance. To verify, run the below command
 
@@ -194,12 +196,12 @@ If the service is registered successfully, open the url -> http://13.127.34.56:4
 
 ![Screenshot (429)](https://github.com/Prem-Kumar16/dash_grpcweb_v3/assets/75419846/cf6a215b-030a-4cc8-8e0a-b5954b874b50)
 
-Also, go to the EC2 instance connect of service discovery. If you check the logs of the service discovery, it contains every info of service registered and discovered there.
+Also, go to the "EC2 instance connect" of service discovery. If you check the logs of the service discovery, it contains every info of service registered and discovered there.
 
 ![Screenshot (430)](https://github.com/Prem-Kumar16/dash_grpcweb_v3/assets/75419846/adddacb9-a311-4769-9fbc-512ec9395e19)
 
 
-Now you can change any values in can bus input simulator and see the changes in the digital cockpit.
+Now you can change any values in "**CAN** bus input simulator" and see the changes in the digital cockpit.
 
 ![Screenshot (431)](https://github.com/Prem-Kumar16/dash_grpcweb_v3/assets/75419846/d907acab-c7d7-4bbf-afe8-367aa56052f5)
 
