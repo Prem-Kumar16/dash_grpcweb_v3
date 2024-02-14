@@ -23,7 +23,6 @@ RUN curl https://sh.rustup.rs -sSf | bash -s -- -y
 ENV PATH="/root/.cargo/bin:${PATH}"
 RUN npm install -g protoc-gen-grpc-web
 RUN npm install -g grpc-tools
-RUN npm install express
 
 #Install git
 RUN apt-get update
@@ -58,9 +57,10 @@ COPY . .
 #RUN npx webpack ./client.js
 RUN chmod +x /app/start_sr.sh
 RUN chmod +x /app/start_webpage.sh
-#CMD ./start_webpage.sh
+RUN npm install express
+CMD ./start_sr.sh
 #CMD ["/bin/sh"]
-CMD ["bash"]
+#CMD ["bash"]
 EXPOSE 8080
 EXPOSE 9090
 EXPOSE 50000
