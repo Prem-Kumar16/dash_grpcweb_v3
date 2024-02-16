@@ -106,10 +106,13 @@ Please open the below link in new tab to ease the process
 
 The ```Service-discovery-demo2``` CloudFormation stack will take about **2 minutes** to be created. This cloudformation stack creates an ec2 instance named "Service-discovery-demo2" to deploy the demo, a security group, a key pair. The instance spun uses custom AMI based on Ubuntu 22.04 LTS (Jammy Jellyfish) that is preinstalled with all the dependencies needed for the demo to run.
 
-Now go to the EC2 instance page, choose the instance named **Service-discovery-demo2**. Choose "Connect" option and select "EC2-Instance connect" option. Change the username to "ubuntu" and select "connect". The instance will be connected via SSH. 
+After 2 minutes, open the url "http://13.126.233.234:7000" (This is nothing but the instance's Public ip that you created earlier using CloudFormation which has the service registry running), you should see a web GUI which shows the services registered along with some more details about the service. At this point in time, there is no services registered, so you should see a blank row stating "No services registered yet". You should see a webpage similar to the below image.
+
+![Screenshot (452)](https://github.com/Prem-Kumar16/dash_grpcweb_v3/assets/75419846/8e546dd5-c2d5-4b12-921c-80cdcbc80c39)
+
+Alternately, you can go to the EC2 instance page, choose the instance named **Service-discovery-demo2**. Choose "Connect" option and select "EC2-Instance connect" option. Change the username to "ubuntu" and select "connect". The instance will be connected via SSH. 
 
 ![Screenshot (423)](https://github.com/Prem-Kumar16/dash_grpcweb_v3/assets/75419846/70fa1355-0a43-4dbd-8333-4b9c91f5f588)
-
 
 Run the below command to know the status of the docker container
 
@@ -138,7 +141,11 @@ Please open the below link in new tab to ease the process
 
 The ```Datasimulator-demo2``` CloudFormation stack will take about **2 minutes** to be created. This cloudformation stack creates an ec2 instance named "Datasimulator-demo2" to deploy the demo, a security group, a key pair.
 
-Connect to the instance like how you connected for the service discovery using EC2 instance connect.
+After a minute, go to the webpage you already opened ("http://13.126.233.234:7000" -> service registry GUI) and click on "Fetch service". You should see a service (named "digital_dash") with status "Registered". This shows that our "CAN BUS input data simulator" service is successfully registered in the service registry. You should see a webpage similar to the image below.
+
+![Screenshot (453)](https://github.com/Prem-Kumar16/dash_grpcweb_v3/assets/75419846/23a18f50-137c-4ad8-ba30-8e3faf31eb79)
+
+Alternately, connect to the instance like how you connected for the service discovery using EC2 instance connect.
 
 Run the below command to know the status of the docker container
 
